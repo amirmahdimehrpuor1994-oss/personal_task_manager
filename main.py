@@ -1,8 +1,8 @@
 from tasks import show_tasks, save_tasks, load_tasks
-from dotenv import load_tasks
+from dotenv import load_dotenv
 import os
 
-load_tasks()
+load_dotenv()
 
 name = input("enter your name : ")
 print("welcome", name)
