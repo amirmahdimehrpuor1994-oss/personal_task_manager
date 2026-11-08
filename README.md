@@ -55,7 +55,7 @@ python main.py
 ``` 
 
 ## Screenshot 
-![personal_task_manager_screenshot](images/image_1.jpg) 
+![personal_task_manager_screenshot](images/world.png) 
 
 ## Demo 
 ![personal_task_manager_demo](images/animation.gif)
