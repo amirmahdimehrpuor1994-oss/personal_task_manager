@@ -1,25 +1,31 @@
-import os
+from tasks import show_tasks, save_tasks, lode_tasks
 from dotenv import load_dotenv
-from tasks import tasks
+import os
 
 load_dotenv()
-admin_password = os.getenv("QUIZ_ADMIN_PASSWORD")
 
-name = input("what's your name ? ")
+name = input("enter your name : ")
+print("welcome", name)
 
-print("welcome")
+admin_mode = input("do you want to enter admin mode ? (yes/no) ")
+if admin_mode == "yes":
+    admin_password = input("enter admin password : ")
+    if admin_password == os.getenv("admin_pass"):
+        print("admin mode activated")
+    else:
+        print("wrong password")
 
-task = input("please enter the Task : ")
+tasks = lode_tasks()
 
+count = int(input("how many tasks do you want to add ? : "))
+for i in range(count):
+    task_name = input("enter a task : ")
+    priority = input("enter priority (low / medium / high) : ").lower()
+    task = {
+        "name" : task_name,
+        "priority" : priority
+    }
+    tasks.append(task)
 
-print(task)
-
-while open("results.txt", "a") in name:
-    task.write(f"{name} - {task}")
-
-    Admin = input("Do you love go to the Admin Mode? (Yes / No)")
-
-    if Admin == "Yes":
-        input("please enter the password!")
-    elif Admin == "No":
-        print("you don't love admin mode!")
+show_tasks(tasks)    
+save_tasks(tasks)
