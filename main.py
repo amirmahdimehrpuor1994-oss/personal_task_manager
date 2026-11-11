@@ -29,3 +29,5 @@ for i in range(count):
 
 show_tasks(tasks)    
 save_tasks(tasks)
+
+print("Welcome to Personal Task Manager!")
